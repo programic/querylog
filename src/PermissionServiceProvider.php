@@ -157,19 +157,20 @@ class PermissionServiceProvider extends ServiceProvider
     {
         $timestamp = date('Y_m_d_His');
         $migrations = collect([
-            '*1_create_roles_table.php',
-            '*2_create_permissions_table.php',
-            '*3_create_permission_role.php',
-            '*4_create_permission_inheritances_table.php',
-            '*5_create_role_user.php',
-            '*6_create_permission_user.php',
+            '1_create_roles_table.php.stub',
+            '2_create_permissions_table.php.stub',
+            '3_create_permission_role.php.stub',
+            '4_create_permission_inheritances_table.php.stub',
+            '5_create_role_user.php.stub',
+            '6_create_permission_user.php.stub',
         ]);
 
         $oldPath = __DIR__.'/../database/migrations/';
         $newPath = database_path().'/migrations/';
         return $migrations->mapWithKeys(function ($file) use ($timestamp, $oldPath, $newPath) {
             $key = $oldPath.$file;
-            $migration = $newPath.str_replace('*', $timestamp, $file);
+            $migration = $newPath.$timestamp.str_replace('.stub', '', $file);
+
             return [$key => $migration];
         })->toArray();
     }
