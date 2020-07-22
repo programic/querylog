@@ -1,6 +1,6 @@
-# Programic - Roles & Permissions
+# Programic - Query log
 
-Met deze package kun je target specifiek of globale rollen en permissies instellen
+Met deze package worden alle database queries gelogt en berekend hoevaak dezelfde query word uitgevoerd. 
 ## Installatie
 Om deze package te gebruiken, installeer je de package via composer.
 
@@ -8,7 +8,7 @@ In je `composer.json`:
 ```json
 {
   "require": {
-    "programic/permissions": "^1.0"
+    "programic/querylog": "^1.0"
   }
 }
 ```

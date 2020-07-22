@@ -1,8 +1,8 @@
 {
-    "name": "programic/permissions",
+    "name": "programic/querylog",
     "license": "proprietary",
     "type": "package",
-    "description": "Target specific roles & permissions",
+    "description": "Log all DB queries",
     "readme": "README.md",
     "authors": [
         {
@@ -20,13 +20,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Programic\\Permission\\": "src/"
+            "Programic\\Querylog\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Programic\\Permission\\PermissionServiceProvider"
+                "Programic\\Querylog\\QuerylogServiceProvider"
             ]
         }
     }
